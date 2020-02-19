@@ -1,10 +1,12 @@
+//Six switches to MIDI: removing connection triggers sound
+//To connect to Max patch
+
 int switches[] = {0, 0, 0, 0, 0, 0};
 #include <MIDIUSB.h>
 MIDIEvent e;
 
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   for (int i = 0; i < 6; i++) {
     pinMode(i + 2, INPUT_PULLUP);
@@ -12,7 +14,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   for (int i=0; i < 6; i++) {
     int value = digitalRead(i + 2);
 //    uncomment the line below to invert the values
@@ -27,7 +28,7 @@ void loop() {
         e.m1 = 176; //label as cc, channel 1
         e.m2 = i; //cc lane from sensor index number   
         e.m3 = switches[i]; //set the value from the sensor
-        e.type = 8; //what is this again? I'm rusty
+        e.type = 8; 
                       
         MIDIUSB.write(e);
 
