@@ -1,3 +1,4 @@
-# listening_to_a_boat
+# Listening to a Boat of Memories
 
-Arduino code to trigger MIDI control data from six switches, developed for a piece by Rachel Beckles Willson.
+This Arduino code triggers MIDI control data from six switches.
+For an interactive installation piece by [https://www.rachelbeckleswillson.com/compositions/](Rachel Beckles Willson).
